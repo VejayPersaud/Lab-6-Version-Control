@@ -11,8 +11,6 @@ def encode(password):
     #Takes the uncoded password from the function parameter and forces it to be a string no matter the input
     string_password = str(password)
     
-     
-    
     for element in string_password:
         
         #force each string number of the password to be an integer type.
@@ -23,3 +21,34 @@ def encode(password):
         encoded_pass += temp
         
     print(encoded_pass)
+    
+def menu():
+    print("Menu")
+    print("-------------")
+    print("1. Encode")
+    print("2. Decode")
+    print("3. Quit")
+    option = int(input("Please enter an option: "))
+    return option
+ 
+#loop will keep asking user for passwords to encode and decode until option 3 is chosen    
+while True:
+    #saves the option chosen when the menu function is called and the menu prints are displayed
+    option = menu() 
+    
+    #encode the user's password
+    if option == 1:
+        user_password = input("Please enter your password to encode: ")
+        encoded_password = encode(user_password)
+        print("Your password has been encoded and stored!")
+    
+    #decodes the user's password
+    if option == 2:
+        #decoded_password = decode(encoded_password)
+        print(f'The encoded password is {encoded_password}, and the original password is {decoded_password}.')
+        
+    #breaks out of the while loop and reaches the end of the file    
+    if option == 3:
+        break
+    
+  
